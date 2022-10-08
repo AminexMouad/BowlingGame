@@ -1,0 +1,15 @@
+{
+  "name": "bowlinggame",
+  "version": "1.0.0",
+  "description": "This is coding interview challenge",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "author": "Amine Mouad",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.1.2"
+  }
+}
