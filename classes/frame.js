@@ -1,15 +1,11 @@
-export class BallThrow {
-  constructor(score, bonus) {
-    this.score = score;
-    this.bonus = bonus;
-  }
-}
-
 export default class Frame {
   constructor() {
     this.ballThrows = [];
     this.finalScore = 0;
+    this.tempScore = 0;
     this.maxThrows = 2;
+    this.isStrike = false;
+    this.isSpare = false;
   }
 
   getBallThrows() {
@@ -18,6 +14,30 @@ export default class Frame {
 
   getFinalScore() {
     return this.finalScore;
+  }
+
+  getTempScore() {
+    return this.tempScore;
+  }
+
+  getStrike() {
+    return this.isStrike;
+  }
+
+  getSpare() {
+    return this.isSpare;
+  }
+
+  markAsStrike() {
+    this.isStrike = true;
+  }
+
+  markAsSpare() {
+    this.isSpare = true;
+  }
+
+  setTempScore(score) {
+    this.tempScore += score;
   }
 
   setFinalScore(score) {
@@ -29,6 +49,6 @@ export default class Frame {
       throw new Error('Max throws reached');
     }
 
-    this.ballThrows.push(new BallThrow(pins, false));
+    this.ballThrows.push(pins);
   }
 }

@@ -1,4 +1,4 @@
-import Frame, { BallThrow } from '../classes/frame';
+import Frame from '../classes/frame';
 
 describe('Frame class', () => {
   it('should be defined', () => {
@@ -35,13 +35,6 @@ describe('Frame class', () => {
       const pins = 5;
       frame.setBallThrows(pins);
       expect(frame.getBallThrows().length).toBe(1);
-    });
-
-    it('should add a new ballThrow to the ballThrows array and expect the ballThrow to be instance of BallThrow class', () => {
-      const frame = new Frame();
-      const pins = 5;
-      frame.setBallThrows(pins);
-      expect(frame.getBallThrows()[0]).toBeInstanceOf(BallThrow);
     });
 
     it('should throw Error if ballThrows length is above maxThrows', () => {
